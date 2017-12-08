@@ -1,7 +1,7 @@
 # madic: MAtrix-Dependent Interference Correction for targeted mass spectrometry data
 madic is a Python package for detecting and correcting interference in targeted mass spectrometry data using high-performance Pandas data structures.
 
-[![Build Status](https://travis-ci.com/dcroote/madic.svg?token=pWgv17vqUqf5aNsyTNyX&branch=master)](https://travis-ci.com/dcroote/madic)
+[![Build Status](https://travis-ci.org/dcroote/madic.svg?branch=master)](https://travis-ci.org/dcroote/madic)
 [![License](https://img.shields.io/badge/license-BSD%20%20(3--clause)-blue.svg)](https://github.com/dcroote/madic/blob/master/LICENSE)
 
 ## Purpose
