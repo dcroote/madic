@@ -1,0 +1,13 @@
+rep,pep,prod_ion,pass_signal_to_noise,pass_transition_ratio,pass_retention_time,pass_all_replicate,interference,sample_name,label,times_arr_str,intensities_arr_str
+rep1,PEP1,y5,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep1,PEP1,y6,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep1,PEP1,y7,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP1,y5,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP1,y6,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP1,y7,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep1,PEP2,y5,True,True,False,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep1,PEP2,y6,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep1,PEP2,y7,True,True,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP2,y5,True,False,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP2,y6,True,False,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"
+rep2,PEP2,y7,True,False,True,True,False,sample1,light,"0,1,2","500.1,800.9,500.1"

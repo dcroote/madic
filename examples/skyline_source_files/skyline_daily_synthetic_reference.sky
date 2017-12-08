@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<srm_settings format_version="3.73" software_version="Skyline-daily (64-bit) 3.7.1.11571">
+  <settings_summary name="Default">
+    <peptide_settings>
+      <enzyme name="Trypsin" cut="KR" no_cut="P" sense="C" />
+      <digest_settings max_missed_cleavages="0" />
+      <peptide_prediction use_measured_rts="true" measured_rt_window="2" use_spectral_library_drift_times="false" spectral_library_drift_times_peak_width_calc_type="resolving_power" spectral_library_drift_times_resolving_power="0" spectral_library_drift_times_width_at_dt_zero="0" spectral_library_drift_times_width_at_dt_max="0" />
+      <peptide_filter start="25" min_length="8" max_length="25">
+        <peptide_exclusions />
+      </peptide_filter>
+      <peptide_libraries pick="library" />
+      <peptide_modifications max_variable_mods="3" max_neutral_losses="1">
+        <static_modifications>
+          <static_modification name="Carbamidomethyl (C)" aminoacid="C" formula="H3C2NO" unimod_id="4" short_name="CAM" />
+        </static_modifications>
+        <heavy_modifications>
+          <static_modification name="Label:13C(6)15N(4) (C-term R)" aminoacid="R" terminus="C" label_13C="true" label_15N="true" />
+          <static_modification name="Label:13C(6)15N(2) (C-term K)" aminoacid="K" terminus="C" label_13C="true" label_15N="true" />
+        </heavy_modifications>
+      </peptide_modifications>
+    </peptide_settings>
+    <transition_settings>
+      <transition_prediction precursor_mass_type="Monoisotopic" fragment_mass_type="Monoisotopic" optimize_by="None">
+        <predict_collision_energy name="ABI 5500 QTrap" step_size="1" step_count="5">
+          <regression_ce charge="2" slope="0.036" intercept="8.857" />
+          <regression_ce charge="3" slope="0.0544" intercept="-2.4099" />
+        </predict_collision_energy>
+        <predict_declustering_potential name="ABI" step_size="1" step_count="5" slope="0.0729" intercept="31.117" />
+      </transition_prediction>
+      <transition_filter precursor_charges="2" product_charges="1" precursor_adducts="[M-3H],[M-2H],[M-H],[M-],[M+H],[M+],[M+2H],[M+3H]" product_adducts="[M-3],[M-2],[M-],[M+],[M+2],[M+3]" fragment_types="y" small_molecule_fragment_types="f" fragment_range_first="m/z &gt; precursor" fragment_range_last="last ion" precursor_mz_window="5" auto_select="true">
+        <measured_ion name="N-terminal to Proline" cut="P" sense="N" min_length="3" />
+        <measured_ion name="C-terminal to Glu or Asp" cut="ED" sense="C" min_length="3" />
+      </transition_filter>
+      <transition_libraries ion_match_tolerance="0.5" min_ion_count="0" ion_count="3" pick_from="all" />
+      <transition_integration />
+      <transition_instrument min_mz="50" max_mz="1250" mz_match_tolerance="0.055" />
+    </transition_settings>
+    <data_settings document_guid="b71cfb06-3bd5-4fa3-8400-7fb4a42bf087" />
+    <measured_results time_normal_area="true">
+      <replicate name="Synthetic_mix_1">
+        <sample_file id="Synthetic_mix_1_f0" file_path="C:\Users\derek\Dropbox\Quake_lab\ms\qqq\1612_allergen_pep_dev\DC_170503_allergen\Data\170609_june_restart.wiff|Synthetic_mix_1|12" sample_name="Synthetic_mix_1" acquired_time="2017-06-09T18:30:08" modified_time="2017-06-09T20:34:27">
+          <instrument_info_list>
+            <instrument_info>
+              <model>QTRAP 6500</model>
+              <ionsource>electrospray ionization</ionsource>
+              <analyzer>quadrupole/quadrupole/axial ejection linear ion trap</analyzer>
+              <detector>electron multiplier</detector>
+            </instrument_info>
+          </instrument_info_list>
+        </sample_file>
+      </replicate>
+      <replicate name="Synthetic_mix_2">
+        <sample_file id="Synthetic_mix_2_f0" file_path="C:\Users\derek\Dropbox\Quake_lab\ms\qqq\1612_allergen_pep_dev\DC_170503_allergen\Data\170609_june_restart.wiff|Synthetic_mix_2|13" sample_name="Synthetic_mix_2" acquired_time="2017-06-09T19:00:51" modified_time="2017-06-09T20:34:27">
+          <instrument_info_list>
+            <instrument_info>
+              <model>QTRAP 6500</model>
+              <ionsource>electrospray ionization</ionsource>
+              <analyzer>quadrupole/quadrupole/axial ejection linear ion trap</analyzer>
+              <detector>electron multiplier</detector>
+            </instrument_info>
+          </instrument_info_list>
+        </sample_file>
+      </replicate>
+    </measured_results>
+  </settings_summary>
+  <peptide_list label_name="Milk.Bos_d_9" websearch_status="X#UMilk.Bos_d_9" auto_manage_children="false">
+    <peptide sequence="FFVAPFPEVFGK" modified_sequence="FFVAPFPEVFGK" calc_neutral_pep_mass="1383.72271" num_missed_cleavages="0" avg_measured_retention_time="23.79495">
+      <implicit_modifications>
+        <implicit_heavy_modifications>
+          <implicit_modification index_aa="11" modification_name="Label:13C(6)15N(2) (C-term K)" mass_diff="+8" />
+        </implicit_heavy_modifications>
+      </implicit_modifications>
+      <peptide_results>
+        <peptide_result replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="23.7946014" />
+        <peptide_result replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="23.7953" />
+      </peptide_results>
+      <precursor charge="2" calc_neutral_mass="1383.72271" precursor_mz="692.868631" auto_manage_children="false" collision_energy="33.800271" declustering_potential="81.627123" modified_sequence="FFVAPFPEVFGK">
+        <precursor_results>
+          <precursor_peak replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="23.80215" start_time="23.7266674" end_time="23.9078331" fwhm="0.0573528744" area="152273824" background="269480.531" height="22247972" truncated="0" identified="false" user_set="FALSE" />
+          <precursor_peak replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="23.80285" start_time="23.72735" end_time="23.92365" fwhm="0.0600666627" area="150702464" background="298770.219" height="21547702" truncated="0" identified="false" user_set="FALSE" />
+        </precursor_results>
+        <transition fragment_type="y" fragment_ordinal="9" calc_neutral_mass="990.517468" product_charge="1" cleavage_aa="A" loss_neutral_mass="0">
+          <precursor_mz>692.868631</precursor_mz>
+          <product_mz>991.524744</product_mz>
+          <collision_energy>33.800271</collision_energy>
+          <declustering_potential>81.627123</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="23.80215" start_time="23.7266674" end_time="23.9078331" area="32104356" background="32275.9141" height="9041618" fwhm="0.05583538" truncated="false" identified="false" rank="3" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="23.80285" start_time="23.72735" end_time="23.92365" area="30945998" background="31636.71" height="8149668" fwhm="0.05976145" truncated="false" identified="false" rank="3" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="8" calc_neutral_mass="919.480354" product_charge="1" cleavage_aa="P" loss_neutral_mass="0">
+          <precursor_mz>692.868631</precursor_mz>
+          <product_mz>920.48763</product_mz>
+          <collision_energy>33.800271</collision_energy>
+          <declustering_potential>81.627123</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="23.80215" start_time="23.7266674" end_time="23.9078331" area="8.171337E+07" background="121472.234" height="22247972" fwhm="0.0573528744" truncated="false" identified="false" rank="1" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="23.80285" start_time="23.72735" end_time="23.92365" area="8.202046E+07" background="152388.6" height="21547702" fwhm="0.0600666627" truncated="false" identified="false" rank="1" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="6" calc_neutral_mass="675.359176" product_charge="1" cleavage_aa="P" loss_neutral_mass="0">
+          <precursor_mz>692.868631</precursor_mz>
+          <product_mz>676.366452</product_mz>
+          <collision_energy>33.800271</collision_energy>
+          <declustering_potential>81.627123</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="23.80215" start_time="23.7266674" end_time="23.9078331" area="3.845609E+07" background="115732.367" height="10823318" fwhm="0.0538302772" truncated="false" identified="false" rank="2" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="23.80285" start_time="23.72735" end_time="23.92365" area="37736004" background="114744.914" height="10328429" fwhm="0.0560814627" truncated="false" identified="false" rank="2" user_set="FALSE" />
+          </transition_results>
+        </transition>
+      </precursor>
+      <precursor charge="2" isotope_label="heavy" calc_neutral_mass="1391.736909" precursor_mz="696.87573" auto_manage_children="false" collision_energy="33.800271" declustering_potential="81.627123" modified_sequence="FFVAPFPEVFGK[+8.0]">
+        <precursor_results>
+          <precursor_peak replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="23.78705" start_time="23.7266674" end_time="23.9078331" fwhm="0.0589415319" area="825678.8" background="13143.0039" height="158686" truncated="0" identified="false" user_set="FALSE" />
+          <precursor_peak replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="23.78775" start_time="23.72735" end_time="23.92365" fwhm="0.0592889525" area="805997.25" background="9952.726" height="154740" truncated="0" identified="false" user_set="FALSE" />
+        </precursor_results>
+        <transition fragment_type="y" fragment_ordinal="9" calc_neutral_mass="998.531667" product_charge="1" cleavage_aa="A" loss_neutral_mass="0">
+          <precursor_mz>696.87573</precursor_mz>
+          <product_mz>999.538943</product_mz>
+          <collision_energy>33.800271</collision_energy>
+          <declustering_potential>81.627123</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="23.78705" start_time="23.7266674" end_time="23.9078331" area="221592.078" background="2565.54932" height="58003" fwhm="0.05855912" truncated="false" identified="false" rank="2" points_across="13" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="23.78775" start_time="23.72735" end_time="23.92365" area="219629.516" background="1743.19934" height="59623" fwhm="0.05544295" truncated="false" identified="false" rank="2" points_across="14" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="8" calc_neutral_mass="927.494553" product_charge="1" cleavage_aa="P" loss_neutral_mass="0">
+          <precursor_mz>696.87573</precursor_mz>
+          <product_mz>928.501829</product_mz>
+          <collision_energy>33.800271</collision_energy>
+          <declustering_potential>81.627123</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="23.78705" start_time="23.7266674" end_time="23.9078331" area="604086.75" background="10577.4551" height="158686" fwhm="0.0589415319" truncated="false" identified="false" rank="1" points_across="13" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="23.78775" start_time="23.72735" end_time="23.92365" area="586367.75" background="8209.526" height="154740" fwhm="0.0592889525" truncated="false" identified="false" rank="1" points_across="14" user_set="FALSE" />
+          </transition_results>
+        </transition>
+      </precursor>
+    </peptide>
+    <peptide sequence="YLGYLEQLLR" modified_sequence="YLGYLEQLLR" calc_neutral_pep_mass="1266.697223" num_missed_cleavages="0" avg_measured_retention_time="22.8001">
+      <implicit_modifications>
+        <implicit_heavy_modifications>
+          <implicit_modification index_aa="9" modification_name="Label:13C(6)15N(4) (C-term R)" mass_diff="+10" />
+        </implicit_heavy_modifications>
+      </implicit_modifications>
+      <peptide_results>
+        <peptide_result replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="22.8034172" />
+        <peptide_result replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="22.7967834" />
+      </peptide_results>
+      <precursor charge="2" calc_neutral_mass="1266.697223" precursor_mz="634.355888" auto_manage_children="false" collision_energy="31.693812" declustering_potential="77.361544" modified_sequence="YLGYLEQLLR">
+        <precursor_results>
+          <precursor_peak replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="22.810667" start_time="22.7381668" end_time="22.9121666" fwhm="0.0542409942" area="125987096" background="157752.969" height="23138076" truncated="0" identified="false" user_set="FALSE" />
+          <precursor_peak replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" fwhm="0.05123059" area="127533616" background="189760.734" height="22427622" truncated="0" identified="false" user_set="FALSE" />
+        </precursor_results>
+        <transition fragment_type="y" fragment_ordinal="8" calc_neutral_mass="990.549831" product_charge="1" cleavage_aa="G" loss_neutral_mass="0">
+          <precursor_mz>634.355888</precursor_mz>
+          <product_mz>991.557107</product_mz>
+          <collision_energy>31.693812</collision_energy>
+          <declustering_potential>77.361544</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="22.810667" start_time="22.7381668" end_time="22.9121666" area="7.387408E+07" background="66585.15" height="23138076" fwhm="0.0489876978" truncated="false" identified="false" rank="1" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" area="75283144" background="76130.01" height="22427622" fwhm="0.05123059" truncated="false" identified="false" rank="1" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="6" calc_neutral_mass="770.465038" product_charge="1" cleavage_aa="L" loss_neutral_mass="0">
+          <precursor_mz>634.355888</precursor_mz>
+          <product_mz>771.472314</product_mz>
+          <collision_energy>31.693812</collision_energy>
+          <declustering_potential>77.361544</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="22.810667" start_time="22.7381668" end_time="22.9121666" area="30397466" background="37008.168" height="9240716" fwhm="0.0516288355" truncated="false" identified="false" rank="2" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" area="30765958" background="53159.9648" height="9747586" fwhm="0.04918704" truncated="false" identified="false" rank="2" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="5" calc_neutral_mass="657.380974" product_charge="1" cleavage_aa="E" loss_neutral_mass="0">
+          <precursor_mz>634.355888</precursor_mz>
+          <product_mz>658.38825</product_mz>
+          <collision_energy>31.693812</collision_energy>
+          <declustering_potential>77.361544</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="22.7961674" start_time="22.7381668" end_time="22.9121666" area="2.171555E+07" background="54159.6563" height="6213661" fwhm="0.0542409942" truncated="false" identified="false" rank="3" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" area="21484508" background="60470.7656" height="6623832.5" fwhm="0.05047788" truncated="false" identified="false" rank="3" user_set="FALSE" />
+          </transition_results>
+        </transition>
+      </precursor>
+      <precursor charge="2" isotope_label="heavy" calc_neutral_mass="1276.705492" precursor_mz="639.360022" auto_manage_children="false" collision_energy="31.693812" declustering_potential="77.361544" modified_sequence="YLGYLEQLLR[+10.0]">
+        <precursor_results>
+          <precursor_peak replicate="Synthetic_mix_1" peak_count_ratio="1" retention_time="22.7961674" start_time="22.7381668" end_time="22.9121666" fwhm="0.0500037745" area="540466.9" background="8082.623" height="116328.914" truncated="0" identified="false" user_set="FALSE" />
+          <precursor_peak replicate="Synthetic_mix_2" peak_count_ratio="1" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" fwhm="0.05095417" area="519857.125" background="8480.477" height="113943.438" truncated="0" identified="false" user_set="FALSE" />
+        </precursor_results>
+        <transition fragment_type="y" fragment_ordinal="8" calc_neutral_mass="1000.5581" product_charge="1" cleavage_aa="G" loss_neutral_mass="0">
+          <precursor_mz>639.360022</precursor_mz>
+          <product_mz>1001.565376</product_mz>
+          <collision_energy>31.693812</collision_energy>
+          <declustering_potential>77.361544</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="22.7961674" start_time="22.7381668" end_time="22.9121666" area="376124.031" background="4825.25928" height="116328.914" fwhm="0.0490103178" truncated="false" identified="false" rank="1" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" area="364973.531" background="5598.824" height="113943.438" fwhm="0.05095417" truncated="false" identified="false" rank="1" points_across="12" user_set="FALSE" />
+          </transition_results>
+        </transition>
+        <transition fragment_type="y" fragment_ordinal="6" calc_neutral_mass="780.473307" product_charge="1" cleavage_aa="L" loss_neutral_mass="0">
+          <precursor_mz>639.360022</precursor_mz>
+          <product_mz>781.480583</product_mz>
+          <collision_energy>31.693812</collision_energy>
+          <declustering_potential>77.361544</declustering_potential>
+          <transition_results>
+            <transition_peak replicate="Synthetic_mix_1" retention_time="22.7961674" start_time="22.7381668" end_time="22.9121666" area="164342.844" background="3257.36353" height="51891.01" fwhm="0.0500037745" truncated="false" identified="false" rank="2" user_set="FALSE" />
+            <transition_peak replicate="Synthetic_mix_2" retention_time="22.7967834" start_time="22.7387829" end_time="22.9127827" area="154883.609" background="2881.65283" height="48633.9961" fwhm="0.0494433567" truncated="false" identified="false" rank="2" points_across="12" user_set="FALSE" />
+          </transition_results>
+        </transition>
+      </precursor>
+    </peptide>
+  </peptide_list>
+</srm_settings>

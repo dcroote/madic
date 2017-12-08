@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+recursive-include examples *
+include static/*
+include madic/version.py
+include madic/tests/data/*

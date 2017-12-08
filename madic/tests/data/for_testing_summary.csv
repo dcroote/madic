@@ -1,0 +1,3 @@
+sample_name,pep,pass_signal_to_noise,pass_transition_ratio,pass_retention_time,pass_all_replicate,interference_corrected
+sample1,PEP1,True,True,True,True,False
+sample1,PEP2,True,False,False,True,False

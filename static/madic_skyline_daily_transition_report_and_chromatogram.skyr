@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<views>
+  <view name="madic_skyline_daily" rowsource="pwiz.Skyline.Model.Databinding.Entities.Transition" sublist="Results!*">
+    <column name="Results!*.Value.PrecursorResult.PeptideResult.ResultFile.Replicate.Name" />
+    <column name="Results!*.Value.PrecursorResult.PeptideResult.ResultFile.AcquiredTime" />
+    <column name="Precursor.Peptide.Protein.Name" />
+    <column name="Precursor.Peptide.Sequence" />
+    <column name="FragmentIon" />
+    <column name="Precursor.IsotopeLabelType" />
+    <column name="Results!*.Value.RetentionTime" />
+    <column name="Results!*.Value.Area" />
+    <column name="Results!*.Value.StartTime" />
+    <column name="Results!*.Value.EndTime" />
+    <column name="Results!*.Value.Chromatogram.InterpolatedData.Times" />
+    <column name="Results!*.Value.Chromatogram.InterpolatedData.Intensities" />
+    <filter column="Results!*.Value" opname="isnotnullorblank" />
+  </view>
+</views>

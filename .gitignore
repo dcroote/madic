@@ -1,0 +1,12 @@
+*.pyc
+*.log
+*.swp
+*.egg-info
+.eggs
+.ipynb_checkpoints
+.coverage
+.cache/
+doc/
+htmlcov/
+dist/
+build/

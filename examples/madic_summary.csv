@@ -1,0 +1,5 @@
+sample_name,pep,pass_transition_ratio,pass_signal_to_noise,pass_retention_time,pass_all_replicate,interference_corrected
+0ppm,FFVAPFPEVFGK,False,False,False,False,False
+0ppm,YLGYLEQLLR,False,True,True,False,True
+5ppm,FFVAPFPEVFGK,True,True,True,True,False
+5ppm,YLGYLEQLLR,True,True,True,True,True
