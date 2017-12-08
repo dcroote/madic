@@ -19,8 +19,7 @@ madic depends on a functioning Python 2.7 or 3.4+ installation (I recommend [ins
 Installing the current release using the `pip` python package manager:
 
 ```bash
-pip install --upgrade pip setuptools
-pip install --upgrade madic
+pip install madic
 ```
 
 Installing the development version (requires git):
