@@ -7,6 +7,8 @@ madic is a Python package for detecting and correcting interference in targeted 
 ## Purpose
 Multiple reaction monitoring (MRM, also known as selected reaction monitoring / SRM) data acquired during targeted mass spectrometry experiments can suffer from complex interference patterns that hinder accurate quantification. This software identifies and corrects interference, as well increases the confidence of peptide calls according to three qualities of an ideal chromatogram: relative transition ratios similar to synthetic standards, co-elution of all individual target transitions with respective stable isotope labeled (SIL) transitions, and a distinguished peak relative to the background. Additionally, these criteria should be satisfied for all replicate injections of a given sample.
 
+For more information see the [biorxiv preprint](https://www.biorxiv.org/content/early/2017/12/12/231266), which illustrates the challenges of matrix interference when detecting allergenic protein in commercial food products.
+
 See the [Jupyter Notebook tutorial](examples/tutorial.ipynb) for a visual walk-through of interference correction in action.
 <p align="center">
 <img src="static/overview.png" />
