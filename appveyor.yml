@@ -1,0 +1,30 @@
+build: false
+
+environment:
+  matrix:
+    - CONDA: C:\Miniconda-x64
+      PYTHON_VERSION: 2.7
+      platform: x64
+    - CONDA: C:\Miniconda35-x64
+      PYTHON_VERSION: 3.5
+      platform: x64
+    - CONDA: C:\Miniconda
+      PYTHON_VERSION: 2.7
+      platform: x86
+    - CONDA: C:\Miniconda35
+      PYTHON_VERSION: 3.5
+      platform: x86
+init:
+  - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+
+install:
+  - "ECHO %CONDA% %PYTHON_VERSION% %PLATFORM%"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda config --add channels conda-forge
+  - conda update -q conda
+  - conda install pip pytest
+  - "pip install -r requirements.txt"
+  - "pip install ."
+  - "echo Done with conda install"
+test_script:
+  - pytest
