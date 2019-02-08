@@ -1,5 +1,6 @@
 import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import pandas as pd
 from madic import plotting
 import numpy as np
@@ -24,21 +25,33 @@ class TestPlots(object):
             intensities.append(signal.gaussian(21, std=3)*(i+1))
         self.df['intensities_arr'] = intensities
 
-        self.df['times_arr'] = [np.arange(21)]*6
+        self.df['times_arr'] = [np.arange(21, dtype=np.dtype(float))]*6
         self.df['rt_start'] = 4
         self.df['rt_end'] = 16
         self.df['rep'] = 'rep1'
         self.df['label'] = 'light'
 
     def test_plot_chromatogram(self, tmpdir):
-        # plot a single chromatogram and save it
+        # plot chromatogram variants and save image
 
         single_pep = self.df[self.df.pep == 'PEP1'].copy()
-        ax = plotting.plot_chromatogram(single_pep)
+
+        # test variants of the same chromatogram
+        f, ax = plt.subplots()
+        # no legend
+        _ = plotting.plot_chromatogram(single_pep, ax=ax)
+        # with RT shift
+        _ = plotting.plot_chromatogram(single_pep, ax=ax, rt_shift=0.1)
+        # with legend
+        _ = plotting.plot_chromatogram(single_pep, ax=ax, legend=True)
+        # with legend and kwargs
+        legend_kwargs = {'bbox_to_anchor': (1, 0.5),
+                         'loc': 1, 'title': 'my_legend'}
+        _ = plotting.plot_chromatogram(single_pep, ax=ax, legend=True,
+                                       legend_kwargs=legend_kwargs)
 
         path = tmpdir.join('test_single_chrom.pdf')
 
-        f = ax.get_figure()
         f.savefig(str(path))
 
     def test_plot_panel_array(self, tmpdir):

@@ -25,14 +25,11 @@ class _chromatogram_plot():
     def add_legend(self):
         """ Adds a legend, with optional kwargs """
 
-        # some nice legend defaults but do not overwrite vals if user specified
-        legend_defaults = {'bbox_to_anchor': (1, 0.8),
-                           'loc': 1,
-                           'handlelength': 0.8}
-
-        self.legend_kwargs = (legend_defaults if self.legend_kwargs is None
-                              else dict(legend_defaults.items()
-                                        + self.legend_kwargs.items()))
+        # some legend defaults if no kwargs are passed
+        if self.legend_kwargs is None:
+            self.legend_kwargs = {'bbox_to_anchor': (1, 0.8),
+                                  'loc': 1,
+                                  'handlelength': 0.8}
 
         self.ax.legend(self.df.prod_ion.values, **self.legend_kwargs)
 
