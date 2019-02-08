@@ -18,7 +18,7 @@ See the [Jupyter Notebook tutorial](examples/tutorial.ipynb) for a visual walk-t
 
 ## Installation
 
-madic depends on a functioning Python 2.7 or 3.4+ installation (I recommend [installing Anaconda](https://conda.io/docs/user-guide/install/index.html), which works on Windows, Linux, and macOS) and the following python packages: [scipy](https://scipy.org/), [numpy](http://www.numpy.org/), [pandas](https://pandas.pydata.org/), and [matplotlib](https://matplotlib.org/).
+madic depends on a functioning Python 2.7 or 3.5+ installation (I recommend [installing Anaconda](https://conda.io/docs/user-guide/install/index.html), which works on Windows, Linux, and macOS) and the following python packages: [scipy](https://scipy.org/), [numpy](http://www.numpy.org/), [pandas](https://pandas.pydata.org/), and [matplotlib](https://matplotlib.org/).
 
 Installing the current release using the `pip` python package manager:
 
