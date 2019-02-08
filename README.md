@@ -3,7 +3,7 @@ madic is a Python package for detecting and correcting interference in targeted 
 
 [![Build Status](https://travis-ci.org/dcroote/madic.svg?branch=master)](https://travis-ci.org/dcroote/madic)
 [![Build status](https://ci.appveyor.com/api/projects/status/oiir9453oqluvmpm/branch/master?svg=true)](https://ci.appveyor.com/project/dcroote/madic/branch/master)
-[![Coverage Status](https://coveralls.io/repos/github/dcroote/madic/badge.svg?branch=coveralls)](https://coveralls.io/github/dcroote/madic?branch=coveralls)
+[![Coverage Status](https://coveralls.io/repos/github/dcroote/madic/badge.svg?branch=master)](https://coveralls.io/github/dcroote/madic?branch=master)
 [![License](https://img.shields.io/badge/license-BSD%20%20(3--clause)-blue.svg)](https://github.com/dcroote/madic/blob/master/LICENSE)
 
 ## Purpose
