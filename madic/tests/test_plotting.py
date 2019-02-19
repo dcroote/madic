@@ -31,6 +31,16 @@ class TestPlots(object):
         self.df['rep'] = 'rep1'
         self.df['label'] = 'light'
 
+    def test_no_rt_shift(self):
+        # confirm rt_shift does not change the underlying data
+
+        single_pep = self.df[self.df.pep == 'PEP1'].copy()
+        _ = plotting.plot_chromatogram(single_pep, rt_shift=0.1)
+
+        original_time_arr = pd.Series([np.arange(21, dtype=np.float)]*6, name='times_arr')
+        for ind, arr in single_pep.times_arr.iteritems():
+            assert (arr == original_time_arr.loc[ind]).all()
+
     def test_plot_chromatogram(self, tmpdir):
         # plot chromatogram variants and save image
 

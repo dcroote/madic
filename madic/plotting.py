@@ -1,6 +1,7 @@
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
+import numpy as np
 
 
 mpl.rcParams['axes.prop_cycle'] = mpl.cycler(
@@ -70,7 +71,7 @@ class _chromatogram_plot():
                 self.ignore_interference:
             return
 
-        t = row.times_arr
+        t = np.array(row.times_arr)  # explicit copy
         if self.rt_shift:
             t -= self.rt_shift
 
