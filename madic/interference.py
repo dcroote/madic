@@ -41,7 +41,7 @@ def _req_tr_for_interference(vals):
     return np.max([np.min([reg, tr_ceil]), tr_floor])
 
 
-def identify_interference(df):
+def identify_interference(df, sn_ratio_min=10.0, area_min=2000.0):
     """ Identify interference in MRM data
 
     Note:
@@ -51,6 +51,10 @@ def identify_interference(df):
 
     Args:
         df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        sn_ratio_min (float): minimum signal (interference) to noise ratio
+            to classify as interference
+        area_min (float): minimum area (within RT bounds) to classify as
+            interference
 
     Returns:
         Original pd.DataFrame with addition bool column indicating interference
@@ -78,11 +82,11 @@ def identify_interference(df):
                                 row.rt_end))
 
     sub['transition_sn'] = _tsn
-    sub = sub[sub.transition_sn > 10]
+    sub = sub[sub.transition_sn >= sn_ratio_min]
 
     # low threshold avoids false positive low intensity spikes
     # in an otherwise low intensity chromatogram
-    sub = sub[sub.area > 2000]
+    sub = sub[sub.area >= area_min]
     logger.info("Found {} instances of transition "
                 "interference.".format(sub.shape[0]))
 
