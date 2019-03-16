@@ -21,9 +21,12 @@ def replicate_to_sample_name(series, delimiter, delimiter_pos):
         pd.Series containing extracted sample names
 
     Example:
-        >> rep = pd.Series(['Study1_Site4_ConditionA_injection_094'])
-        >> print(replicate_to_sample_name(rep, '_', 2).values[0])
-        'ConditionA'
+    ::
+
+        >>> import pandas as pd
+        >>> rep = pd.Series(['Study1_Site4_ConditionA_injection_094'])
+        >>> print(replicate_to_sample_name(rep, '_', 2).values[0])
+        ConditionA
     """
 
     result_series = series.str.split(delimiter, expand=True)[delimiter_pos]
@@ -37,8 +40,8 @@ def replicate_to_sample_name(series, delimiter, delimiter_pos):
     return result_series
 
 
-def expand_comma_sep_series(series, smooth=False,
-                                  window_length=5, polyorder=1):
+def _expand_comma_sep_series(series, smooth=False, window_length=5,
+                             polyorder=1):
     """ Expands comma separated series into array
 
     Necessary to convert a time and chromatogram transition data within a
@@ -77,7 +80,7 @@ def read_transition_report(infile, delimiter=None, delimiter_pos=None,
         This custom report can be loaded within Skyline as follows:
         File --> Export --> Report --> Edit list --> Import
 
-        See :func:`io.replicate_to_sample_name` for `delimiter` and
+        See :func:`madic.io.replicate_to_sample_name` for `delimiter` and
         `delimiter_pos` use
 
     Args:
@@ -110,7 +113,7 @@ def read_transition_report(infile, delimiter=None, delimiter_pos=None,
                        'Interpolated Intensities': 'intensities'
                        }, inplace=True)
 
-    verify_transition_report_columns(df)
+    _verify_transition_report_columns(df)
 
     # categorical dtype is more performant than object (~string) dtype
     df = utils.cols_to_category_dtype(df, ['pep', 'pro', 'prod_ion', 'label'])
@@ -120,14 +123,14 @@ def read_transition_report(infile, delimiter=None, delimiter_pos=None,
             df.rep, delimiter, delimiter_pos)
 
     # add array columns derived from comma separated chromatogram columns
-    df['intensities_arr'] = expand_comma_sep_series(df.intensities,
-                                                    smooth=smooth_chromatograms)
-    df['times_arr'] = expand_comma_sep_series(df.times)
+    df['intensities_arr'] = _expand_comma_sep_series(df.intensities,
+                                                     smooth=smooth_chromatograms)
+    df['times_arr'] = _expand_comma_sep_series(df.times)
 
     return df
 
 
-def verify_transition_report_columns(df):
+def _verify_transition_report_columns(df):
     """ Verify necessary columns are present
 
     Args:

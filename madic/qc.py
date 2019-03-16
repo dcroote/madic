@@ -13,7 +13,7 @@ def _aggregate_ref_data(df):
     injections of reference transition data
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
 
     Returns:
         Aggregated pd.DataFrame with reference transition ratios
@@ -35,9 +35,10 @@ def eval_transition_ratio(df, ref_df, method='absolute', tolerance=0.15):
     """ Evaluate transition ratios against reference as a quality control step
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
             Contains sample data to evaluate.
-        ref_df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        ref_df (pd.DataFrame): loaded using
+            :func:`madic.io.read_transition_report`
             Contains synthetic standards / QC samples from which transition
         method (str): 'absolute' or 'relative'
         tolerance (float): fractional difference in transition ratios between
@@ -139,7 +140,7 @@ def _sn_from_groupby(g, threshold_sn):
         Transitions with interference are ignored
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
         threshold_sn (float or int): Minimum peak height multiple of median
         background to pass QC
 
@@ -184,7 +185,7 @@ def eval_signal_to_noise(df, threshold_sn=3):
     """ Evaluate peptide signal to noise as a quality control step
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
         threshold_sn (int or float): minimum ratio of peak height to median
             intensity outside of peak boundaries in order to pass QC.
             Calculated using summed transition chromatograms
@@ -224,7 +225,7 @@ def recompute_peak_rt(df):
         Renames existing retention time column to 'rt_original'
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
 
     Returns:
         Original pd.DataFrame with updated `rt` and new `rt_original` columns
@@ -275,7 +276,7 @@ def eval_retention_time(df, rt_threshold=0.07):
     time of heavy transitions within a given threshold
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
         rt_threshold (float): max allowable RT difference (min) between light
             transitions and heavy RT mean. Likely needs to be tuned based on
             chromatography
@@ -335,7 +336,7 @@ def eval_all_replicate(df, eval_metrics=None):
     for all replicates
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
         eval_metrics (list, optional): previously evaluated metrics for which
             replicates must pass.
             Can include: `pass_signal_to_noise`, `pass_transition_ratio`, and
@@ -381,9 +382,10 @@ def eval_data(df, ref_df, signal_to_noise=True, transition_ratio=True,
     """ Convenience wrapper for calculating quality control metrics
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
             Contains sample data to evaluate.
-        ref_df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        ref_df (pd.DataFrame): loaded using
+            :func:`madic.io.read_transition_report`
             Contains synthetic standards / QC samples from which transition
             ratios are derived
         signal_to_noise (bool): If True, evaluate signal to noise
@@ -422,7 +424,7 @@ def summarize_results(df, level='sample_name'):
     """ Summarize quality control results
 
     Args:
-        df (pd.DataFrame): loaded using :func:`io.read_transition_report`
+        df (pd.DataFrame): loaded using :func:`madic.io.read_transition_report`
         level (str): Choices: 'sample_name' or 'rep'
             Whether to return summary on a sample or replicate basis
 

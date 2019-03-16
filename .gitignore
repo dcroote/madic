@@ -6,7 +6,9 @@
 .ipynb_checkpoints
 .coverage
 .cache/
-doc/
 htmlcov/
 dist/
 build/
+_build
+_templates
+_static

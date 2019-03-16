@@ -20,7 +20,7 @@ class TestChromatogramExpansion(object):
                                      np.array([1., 2., 3., 4., 5., 4., 3.,
                                                2., 1.])],
                                     name='intensities')
-        result = io.expand_comma_sep_series(self.df.intensities)
+        result = io._expand_comma_sep_series(self.df.intensities)
 
         assert_series_equal(result, expected_series)
 
@@ -32,7 +32,7 @@ class TestChromatogramExpansion(object):
                                                3., 2., 1.])],
                                     name='intensities')
 
-        result = io.expand_comma_sep_series(self.df.intensities,
+        result = io._expand_comma_sep_series(self.df.intensities,
                                                   smooth=True)
 
         assert_series_equal(result, expected_series)

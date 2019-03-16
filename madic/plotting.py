@@ -116,9 +116,9 @@ def plot_chromatogram(df, ax=None, rt_bounds=True,
             lines
         legend (bool, optional): If True, draw legend
         rt_shift (float, optional): Retention time offset, useful for
-        correcting retention time shift if plotting chromatogram overlays
+            correcting retention time shift if plotting chromatogram overlays
         plot_kwargs (dict, optional): Passed to ax.plot()
-        legend_kwargs (dict, optional): Passed to ax.legend() if `legend`=True
+        legend_kwargs (dict, optional): Passed to ax.legend() if `legend=True`
 
     Returns:
         Axes object with drawing

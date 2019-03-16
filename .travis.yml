@@ -12,6 +12,6 @@ before_script:
   - sleep 3
 script:
   - pip install .
-  - pytest --cov=madic
+  - pytest --doctest-modules --cov=madic -v
 after_success:
   - coveralls
