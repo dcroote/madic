@@ -14,7 +14,9 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../'))
+sys.path.insert(0, os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '../')
+))
 
 
 # -- Project information -----------------------------------------------------
@@ -26,7 +28,8 @@ author = 'Derek Croote'
 # The short X.Y version
 version = ''
 # The full version, including alpha/beta/rc tags
-release = '0.1.0'
+import madic
+release = madic.__version__
 
 
 # -- General configuration ---------------------------------------------------
